@@ -13,13 +13,19 @@
 <body>
 
   <div class="font">
-    <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">0000</span>
+    <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">000</span>
   </div>
+
   <div>
-    <input type="button" value="Start" onclick="start()">
-    <input type="button" value="Pause" onclick="pause()">
+    <input type="button" id="startStop" value="Start" onclick="startStop()">
     <input type="button" value="Reset" onclick="reset()">
     <input type="button" value="Lap" onclick="lap()">
+  </div>
+
+  <div id="divlaps">
+    <ul id="laps">
+      
+    </ul>
   </div>
 
 </body>
