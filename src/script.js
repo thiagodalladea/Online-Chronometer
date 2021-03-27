@@ -2,7 +2,7 @@ let hours = 0
 let minutes = 0
 let seconds = 0
 let milliseconds = 0
-let cron;
+let cron
 let playChronometer = false
 
 function chronometer () {
@@ -75,18 +75,21 @@ function reset () {
   document.getElementById('minutes').innerText = '00'
   document.getElementById('seconds').innerText = '00'
   document.getElementById('milliseconds').innerText = '000'
-  removeLaps(document.getElementById('laps'));
+  removeLaps(document.getElementById('laps'))
 }
 
 function lap () {
-  let ul = document.getElementById('laps')
-  let li = document.createElement('li')
-  ul.appendChild(li)
-  li.appendChild(document.createTextNode(`${returnValue(hours)}:${returnValue(minutes)}:${returnValue(seconds)}:${returnValueMs(milliseconds)}`));
+  if(playChronometer != 0 || (hours != 0 || minutes != 0 || seconds != 0 || milliseconds != 0)) {
+    let ul = document.getElementById('laps')
+    let li = document.createElement('li')
+    ul.appendChild(li)
+
+    li.appendChild(document.createTextNode(`${returnValue(hours)}:${returnValue(minutes)}:${returnValue(seconds)}:${returnValueMs(milliseconds)}`))
+  }
 }
 
 function removeLaps(element) {
-  element.parentNode.removeChild(element);
+  element.parentNode.removeChild(element)
   let div = document.getElementById('divlaps')
   let ul = document.createElement('ul')
   ul.setAttribute('id','laps')
